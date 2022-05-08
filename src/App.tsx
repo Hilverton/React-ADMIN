@@ -6,7 +6,6 @@ import PostIcon from '@mui/icons-material/Book';
 import UserIcon from '@mui/icons-material/People';
 
 const i18nProvider = polyglotI18nProvider(() => brazilianMessages, 'pt-br');
-import './App.css';
 import PostList from './components/PostList'
 import PostShow from './components/PostShow'
 import PostEdit from './components/PostEdit'
