@@ -2,11 +2,13 @@ import { Show, ReferenceField, TextField, Labeled, SimpleShowLayout } from 'reac
 import { Divider } from '@mui/material';
 
 const PostShow = () => (
-  <Show title="Detalhes da postagem">
+  <Show title="Detalhes da postagem" sx={{ '& .RaShow-card': { padding: 1 } }}>
     <SimpleShowLayout spacing={2} divider={<Divider flexItem />}>
-      <ReferenceField label="Usuário" source="userId" reference="users">
-        <TextField source="name" />
-      </ReferenceField>
+      <Labeled label="Usuário" sx={{ fontWeight: 'bold', '& .RaLabeled-label': { fontWeight: 'bold', fontSize: 16 } }}>
+        <ReferenceField source="userId" reference="users">
+          <TextField source="name" />
+        </ReferenceField>
+      </Labeled>
       <Labeled label="Identificador" sx={{ fontWeight: 'bold', '& .RaLabeled-label': { fontWeight: 'bold', fontSize: 16 } }}>
         <TextField source="id" />
       </Labeled>
