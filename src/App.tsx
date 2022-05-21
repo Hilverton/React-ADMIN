@@ -12,11 +12,12 @@ import PostEdit from './components/PostEdit'
 import UserEdit from './components/UserEdit'
 import UserList from './components/UserList'
 import UserShow from './components/UserShow'
+import CustomLayout from './components/CustomLayout'
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
 
 export default function App() {
-  return <Admin title="Meu painel administrativo" i18nProvider={i18nProvider} dataProvider={dataProvider}>
+  return <Admin layout={CustomLayout} title="Meu painel administrativo" i18nProvider={i18nProvider} dataProvider={dataProvider}>
     <Resource name="posts" options={{ label: 'Postagens' }} list={PostList} edit={PostEdit} show={PostShow} icon={PostIcon}/>
     <Resource name="users" options={{ label: 'Usuários' }} list={UserList} edit={UserEdit} show={UserShow} icon={UserIcon}/>
   </Admin>;
